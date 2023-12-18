@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Personal Portfolio Site</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d5d2c45dbf.js" crossorigin="anonymous"></script>
 </head>
@@ -13,7 +14,7 @@
     <div class="container">
         <nav>
             <img src="images/logo.png" alt="Name logo" class="logo">
-            <ul id="sidemenu">
+            <ul id="sidemenu" class="animate__pulse animate__animated">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -21,7 +22,8 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><i class="fa-solid fa-xmark" role="button" aria-hidden= "true" onclick="closemenu()"></i></li>
             </ul>
-            <i class="fa-solid fa-bars" role="button" aria-hidden= "true" onclick="openmenu()"></i>
+            <i class="fa-solid fa-bars animate__pulse animate__animated" role="button" aria-hidden="true" onclick="openmenu()"></i>
+            <i class="fa-solid fa-bars" role="button" aria-hidden= "true" onclick="openmenu()"></i> 
         </nav>
         <div class="header-text">
             <p></p>
@@ -185,12 +187,25 @@
         sidemenu.style.right = "0";
     }
     function closemenu(){
-        sidemenu.style.right = "-200";
+        sidemenu.style.right = "-200px";
     }
 
 
 
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Remove the animate__pulse class after 1.5 seconds (1500 milliseconds)
+        setTimeout(function() {
+            document.getElementById('sidemenu').classList.remove('animate__pulse');
+            document.querySelector('.fa-bars').classList.remove('animate__pulse');
+        }, 2000);
+    });
+</script>
+
+
+
 <script src="script.js"></script>
 
 
