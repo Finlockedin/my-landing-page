@@ -72,6 +72,9 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #0266e9;
 }
+.animate__pulse {
+    animation: pulse 1s infinite;
+}
 /*-------------------about----------------*/
 #about{
     padding: 80px 0;
